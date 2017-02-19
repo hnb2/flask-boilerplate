@@ -7,10 +7,11 @@ This is boilerplate/skeleton code for a flask application meant for a RESTful AP
  * Clevercloud structure, deployment ready
  * Rollbar integration
  * Endpoint documented with flask-restplus
- * Test environment : unittest, nose, coverage
- * Travis integration for unit tests and coverage
  * CORS ready
  * JSON logging on the stdout and logentries
+ * Test environment: unittest, nose, coverage
+ * Code quality: flake8, radon
+ * Convenient Makefile
 
 ## Some goals/wanted features:
 
