@@ -14,9 +14,7 @@ This is boilerplate/skeleton code for a flask application meant for a RESTful AP
 
 ## Some goals/wanted features:
 
- * Fix the Makefile (notably the install)
  * Replace pylint with radon ?
- * Create functionnal tests and run them separately from the unit tests
  * Make it public again
 
 ## Installation
