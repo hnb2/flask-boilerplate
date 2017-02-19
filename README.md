@@ -14,7 +14,6 @@ This is boilerplate/skeleton code for a flask application meant for a RESTful AP
 
 ## Some goals/wanted features:
 
- * Replace pylint with radon ?
  * Make it public again
 
 ## Installation
