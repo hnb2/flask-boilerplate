@@ -53,12 +53,18 @@ The final json document can be reached [here](http://localhost:5000/spec)
 make test-unit
 ```
 
-## Code style and Linting
+## Code style, quality and Linting
 
- * Linting is using pylint and flake8.
+ * Linting is done using flake8.
  * PEP-8 is followed and asserted using flake8 linter. There is a .flake8 file at the root of app, most IDEs/text editors can use it to determine the preferences.
+ * Code can be analyzed and metrics extracted through radon. For a more verbose output, you can un-comment the 'radon raw' command.
 
  To lint type
 ```bash
 make lint
+```
+
+To get metrics type
+```bash
+make analyze
 ```
