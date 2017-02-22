@@ -84,6 +84,5 @@ The `msg-logger` is used to send general messages either on STDOUT or logentries
 import logging
 
 logger = logging.getLogger('msg-logger')
-logger.info({'user_id': 745, 'retries': 3, 'locked': True})
-logger.warn('It can also be a string instead of a dictionnary')
+logger.info('user retried to login and failed', extra={'user_id': 745, 'retries': 3, 'locked': True})
 ```
