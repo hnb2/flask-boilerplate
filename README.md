@@ -15,6 +15,8 @@ This is boilerplate/skeleton code for a flask application meant for a RESTful AP
 
 ## Some goals/wanted features:
 
+ * Have the swagger UI on ghpages ?
+ * Transition to python 3.6 (at least 3.5)
  * Make it public again
 
 ## Installation

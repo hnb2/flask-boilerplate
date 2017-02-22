@@ -1,15 +1,18 @@
+import logging
+import json
 import flask
 from flask_cors import CORS
 from flask_restplus import Api
-from logger import ContextualFilter, handler
+import app.http_logger as http_logger
+import app.msg_logger as msg_logger
 
 app = flask.Flask(__name__)
 app.config.from_object('config')
 
-app.logger.addFilter(ContextualFilter())
-app.logger.addHandler(handler)
-
 CORS(app, resources=r'/*', allow_headers='*')
+
+http_logger.init()
+msg_logger.init()
 
 
 @app.errorhandler(404)
@@ -32,13 +35,15 @@ def after_request(response):
     # TODO: Weird, https://github.com/pallets/flask/issues/993
     response.direct_passthrough = False
 
-    app.logger.info(
+    logger = logging.getLogger('http-logger')
+    logger.info(
         response.status,
         extra={
-            'response': response.data.replace('\n', '').replace('    ', ''),
+            'response': json.loads(response.data),
             'status_code': response.status_code
         }
     )
+
     return response
 
 # We need to import those blueprints, AFTER the initialization
@@ -62,7 +67,6 @@ api.add_namespace(health_ns)
 if app.config['DEBUG'] and app.config['ENVIRONMENT'] != 'testing':
     import rollbar
     import rollbar.contrib.flask
-    import json
     from flask import got_request_exception
 
     rollbar.init(
