@@ -70,3 +70,20 @@ To get metrics type
 ```bash
 make analyze
 ```
+
+
+## Logging
+
+We have 2 loggers: `http-logger` and `msg-logger`. Both are using JSON as the output format.
+
+The `http-logger` is only used in the `after_request` callback, to output full HTTP requests and responses on STDOUT. You should not have to use it yourself.
+
+The `msg-logger` is used to send general messages either on STDOUT or logentries if configured (See Environment variables). You can use it the following way:
+
+```python
+import logging
+
+logger = logging.getLogger('msg-logger')
+logger.info({'user_id': 745, 'retries': 3, 'locked': True})
+logger.warn('It can also be a string instead of a dictionnary')
+```
