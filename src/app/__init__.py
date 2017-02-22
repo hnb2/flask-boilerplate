@@ -35,11 +35,17 @@ def after_request(response):
     # TODO: Weird, https://github.com/pallets/flask/issues/993
     response.direct_passthrough = False
 
+    response_data = None
+    try:
+        response_data = json.loads(response.data)
+    except ValueError:
+        response_data = response.data
+
     logger = logging.getLogger('http-logger')
     logger.info(
         response.status,
         extra={
-            'response': json.loads(response.data),
+            'response': response_data,
             'status_code': response.status_code
         }
     )
