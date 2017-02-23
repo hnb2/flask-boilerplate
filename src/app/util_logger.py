@@ -39,6 +39,8 @@ class CustomFilter(logging.Filter):
         log_record.request_id = str(uuid4())
         log_record.headers = {k: self._map_headers(v) for k, v in request.headers.items()}
         log_record.environment = os.environ.get('ENVIRONMENT', 'development')
+
+        # Clevercloud variables
         log_record.app_id = os.environ.get('APP_ID', '')
         log_record.instance_id = os.environ.get('INSTANCE_ID', '')
         log_record.instance_type = os.environ.get('INSTANCE_TYPE', '')
@@ -70,6 +72,7 @@ class CustomFormatter(logging.Formatter):
         'threadName',
         'msecs',
         'pathname',
+        'stack_info',
         'exc_info'
     ]
 
