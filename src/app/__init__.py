@@ -70,7 +70,7 @@ api = Api(
 api.add_namespace(health_ns)
 # TODO: Add your namespaces to the api here
 
-if app.config['DEBUG'] and app.config['ENVIRONMENT'] != 'testing':
+if app.config['ROLLBAR_ACCESS_TOKEN']:
     import rollbar
     import rollbar.contrib.flask
     from flask import got_request_exception
@@ -83,6 +83,7 @@ if app.config['DEBUG'] and app.config['ENVIRONMENT'] != 'testing':
     )
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 
+if app.config['DEBUG'] and app.config['ENVIRONMENT'] != 'testing':
     @app.route('/spec/')
     def spec():
         return json.dumps(api.__schema__)

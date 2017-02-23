@@ -20,4 +20,4 @@ ENVIRONMENT = os.environ.get('ENVIRONMENT', 'staging')
 
 APP_TOKEN = os.environ.get('APP_TOKEN', '4b6f204b-04e8-489a-9aec-7d204e4cec34')
 
-ROLLBAR_ACCESS_TOKEN = os.environ.get('ROLLBAR_ACCESS_TOKEN', 'TO_SET')
+ROLLBAR_ACCESS_TOKEN = os.environ.get('ROLLBAR_ACCESS_TOKEN', None)

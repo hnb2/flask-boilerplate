@@ -6,7 +6,7 @@ server:
 	source env/bin/activate && cd $(APP_DIR) && python manage.py runserver
 
 install:
-	virtualenv env
+	python -m venv
 	source env/bin/activate && pip install -r src/requirements.txt && pip install -r src/requirements-extra.txt && pip install -r src/tests/requirements.txt
 
 test: lint analyze test-unit

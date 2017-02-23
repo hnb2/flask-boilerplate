@@ -37,7 +37,7 @@ class CustomFilter(logging.Filter):
         log_record.x_forwarded_proto = self._get_x_list_param('X-FORWARDED-PROTO')
         log_record.body = self._get_request_body()
         log_record.request_id = str(uuid4())
-        log_record.headers = {k: self._map_headers(v) for k, v in request.headers.iteritems()}
+        log_record.headers = {k: self._map_headers(v) for k, v in request.headers.items()}
         log_record.environment = os.environ.get('ENVIRONMENT', 'development')
         log_record.app_id = os.environ.get('APP_ID', '')
         log_record.instance_id = os.environ.get('INSTANCE_ID', '')
@@ -74,7 +74,7 @@ class CustomFormatter(logging.Formatter):
     ]
 
     def format(self, record):
-        properties = dict((key, value) for key, value in vars(record).iteritems() if key not in CustomFormatter.BLACKLIST)
+        properties = dict((key, value) for key, value in vars(record).items() if key not in CustomFormatter.BLACKLIST)
 
         record.msg = json.dumps(properties)
 

@@ -1,4 +1,4 @@
-This is boilerplate/skeleton code for a flask application meant for a RESTful API (with http and json)
+This is boilerplate/skeleton code for a flask application meant for a RESTful API (with http and json) using Python 3 (tested with 3.6)
 
 ## Current features:
 
@@ -16,12 +16,11 @@ This is boilerplate/skeleton code for a flask application meant for a RESTful AP
 ## Some goals/wanted features:
 
  * Have the swagger UI on ghpages ?
- * Transition to python 3.6 (at least 3.5)
  * Make it public again
 
 ## Installation
 
-This project requires pip and virtualenv.
+This project requires python 3.
 ```bash
 make install
 ```
