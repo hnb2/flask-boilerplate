@@ -16,7 +16,7 @@ class CustomFilter(logging.Filter):
 
     def _get_request_body(self):
         if request.form:
-            return request.form.keys()[0]
+            return list(request.form)[0]
         return {}
 
     def _map_headers(self, item):
