@@ -39,7 +39,7 @@ def after_request(response):
     try:
         response_data = json.loads(response.data)
     except ValueError:
-        response_data = response.data
+        response_data = str(response.data)
 
     logger = logging.getLogger('http-logger')
     logger.info(
