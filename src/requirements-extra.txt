@@ -1,1 +1,1 @@
-pipdeptree==0.9.0
+pipdeptree==0.10.1
