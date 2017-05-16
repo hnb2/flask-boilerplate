@@ -21,3 +21,7 @@ analyze:
 	source env/bin/activate && radon cc -o SCORE $(APP_DIR)
 	source env/bin/activate && radon mi $(APP_DIR)
 	#source env/bin/activate && radon raw $(APP_DIR)
+
+outdated:
+	source env/bin/activate && pip list -o
+	source env/bin/activate && pip list -o | sed 1,2d | cut -d ' ' -f1 | while read x; do pipdeptree --packages "$$x" --reverse; done

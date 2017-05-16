@@ -15,6 +15,7 @@ This is boilerplate/skeleton code for a flask application meant for a RESTful AP
 
 ## Some goals/wanted features:
 
+ * Replace [mock](https://pypi.python.org/pypi/mock) library by [unittest.mock](https://docs.python.org/3/library/unittest.mock.html) directly
  * Have the swagger UI on ghpages ?
  * Make it public again
 
