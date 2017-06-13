@@ -3,6 +3,6 @@ Flask-Cors==3.0.2
 flask-restplus==0.10.1
 Flask-Script==2.0.5
 Logentries==0.17
-radon==1.5.0
+radon==2.0.2
 rollbar==0.13.11
 WTForms==2.1
