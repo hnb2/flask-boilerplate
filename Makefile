@@ -25,3 +25,6 @@ analyze:
 outdated:
 	source env/bin/activate && pip list -o
 	source env/bin/activate && pip list -o | sed 1,2d | cut -d ' ' -f1 | while read x; do pipdeptree --packages "$$x" --reverse; done
+
+clean:
+	rm -rf env/
