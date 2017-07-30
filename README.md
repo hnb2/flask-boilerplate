@@ -98,3 +98,7 @@ import logging
 logger = logging.getLogger('msg-logger')
 logger.info('user retried to login and failed', extra={'user_id': 745, 'retries': 3, 'locked': True})
 ```
+
+## License
+
+MIT License
