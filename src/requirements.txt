@@ -1,8 +1,8 @@
 blinker==1.4
 Flask-Cors==3.0.3
 flask-restplus==0.10.1
-Flask-Script==2.0.5
+Flask-Script==2.0.6
 Logentries==0.17
-radon==2.0.2
+radon==2.1.1
 rollbar==0.13.12
 WTForms==2.1
